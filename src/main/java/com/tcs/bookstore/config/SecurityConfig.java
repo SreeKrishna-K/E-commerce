@@ -24,7 +24,7 @@ public class SecurityConfig {
 	        http.authorizeHttpRequests(auth -> auth
 	        				.requestMatchers("user/signup","user/forgotPassword").permitAll()
 //	                        .antMatchers("/private/**").authenticated()
-	                        .anyRequest().authenticated())
+	                        .anyRequest().authenticated()) // means any request coming to the server should be authenticated
 	                .httpBasic(withDefaults())
 	                .formLogin(withDefaults())
 	                .csrf(AbstractHttpConfigurer::disable);
